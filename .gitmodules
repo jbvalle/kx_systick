@@ -1,0 +1,3 @@
+[submodule "kx_regs"]
+	path = kx_regs
+	url = git@github.com:jbvalle/kx_regs.git
