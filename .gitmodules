@@ -1,6 +1,0 @@
-[submodule "kx_regs"]
-	path = kx_regs
-	url = git@github.com:jbvalle/kx_regs.git
-[submodule "kx_gpio"]
-	path = kx_gpio
-	url = git@github.com:jbvalle/kx_gpio.git
