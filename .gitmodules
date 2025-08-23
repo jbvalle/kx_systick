@@ -4,3 +4,6 @@
 [submodule "kx_gpio"]
 	path = kx_gpio
 	url = git@github.com:jbvalle/kx_gpio.git
+[submodule "kx_systick"]
+	path = kx_systick
+	url = git@github.com:jbvalle/kx_systick.git
