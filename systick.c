@@ -17,6 +17,7 @@ void systick_init(const SysTick_ConfigType * config){
     SYSTICK->STK_CTRL |=  (config->int_en << STK_CTRL_BIT_POS_TICKINT);
     if(config->int_en){
         global_disable_IRQ();
+
     }
     // Configure Clock Source for Systick
     SYSTICK->STK_CTRL &= ~(1 << STK_CTRL_BIT_POS_CLKSRC);
