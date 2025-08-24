@@ -30,17 +30,46 @@ void systick_init(const SysTick_ConfigType * config){
     }
 }
 
+void _wait_ms(int time){
+    for(int i = 0; i < time; i++){
+        for(int j = 0; j < 1600; j++);
+    }
+}
+
+
 /* Example notification function (application logic here) */
 void SysTick_Callback_Channel0(void){
 
     // Example: toggle LED, increment tick counter, etc.
-    gpio_toggle(GPIO_PORT_A, 5);
+    gpio_toggle(GPIO_PORT_D, 12);
+
+}
+
+void SysTick_Callback_Channel1(void){
+
+    // Example: toggle LED, increment tick counter, etc.
+    gpio_toggle(GPIO_PORT_D, 13);
+
+}
+
+void SysTick_Callback_Channel2(void){
+
+    // Example: toggle LED, increment tick counter, etc.
+    gpio_toggle(GPIO_PORT_D, 14);
+
+}
+
+void SysTick_Callback_Channel3(void){
+
+    // Example: toggle LED, increment tick counter, etc.
+    gpio_toggle(GPIO_PORT_D, 15);
+
 }
 
 void SysTick_SetCallback(uint8_t channel, SysTick_CallbackType callback){
 
     if(channel < SYSTICK_CHANNEL_COUNT){
-        SysTick_Callbacks[0] = callback;
+        SysTick_Callbacks[channel] = callback;
     }
 }
 
