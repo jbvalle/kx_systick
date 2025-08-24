@@ -37,7 +37,6 @@ void SysTick_Callback_Channel0(void){
 
 void SysTick_SetCallback(uint8_t channel, SysTick_CallbackType callback){
 
-
     if(channel < SYSTICK_CHANNEL_COUNT){
         SysTick_Callbacks[0] = callback;
     }
