@@ -1,13 +1,14 @@
 #include <stdint.h>
 #include "systick.h"
 #include "cortex_m4.h"
+#include "mcu.h"
 #include "gpio.h"
 
 static SysTick_CallbackType SysTick_Callbacks[SYSTICK_CHANNEL_COUNT] = {0};
 
 void systick_init(const SysTick_ConfigType * config){
     // Set Reload Value
-    uint32_t systick_reload_val = (AHB_FRQ_Hz / config->freq_Hz) - 1;
+    uint32_t systick_reload_val = (MCU_SYSTEM_CLK / config->freq_Hz) - 1;
     SYSTICK->STK_LOAD = systick_reload_val - 1;
     // Reset Counter Current Register
     SYSTICK->STK_VAL = 0;
